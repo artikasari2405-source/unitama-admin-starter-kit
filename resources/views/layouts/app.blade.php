@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Components / Accordion - NiceAdmin Bootstrap Template</title>
+  <title>{{ $title }}</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
   <meta content="" name="author">
 
-{{ asset('niceadmin') }}
+
 
   <!-- Favicons -->
   <link href="{{ asset('niceadmin/img/favicon.png') }}" rel="icon">
@@ -19,23 +19,23 @@
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    href="https://fonts.googleapis.com/.css') }}?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <!-- Vendor .CSS') }} Files -->
   <link href="{{ asset('niceadmin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('niceadmin/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-  <link href="{{ asset('niceadmin/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('niceadmin/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+<link href="{{ asset('niceadmin/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+<link href="{{ asset('niceadmin/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+<link href="{{ asset('niceadmin/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
 
   <!-- add on -->
-  <link rel="stylesheet" href="{{ asset('niceadmin/vendor/dataTables/css/dataTables.bootstrap5.css') }}">
-  <link href="{{ asset('niceadmin/vendor/select2/css/select2.min.css') }}" rel="stylesheet" />
-  <link href="{{ asset('niceadmin/vendor/select2/css/select2-bootstrap-5-theme.min.css') }}" rel="stylesheet" />
+<link rel="stylesheet" href="{{ asset('niceadmin/vendor/dataTables/css/dataTables.bootstrap5.css') }}">
+<link href="{{ asset('niceadmin/vendor/select2/css/select2.min.css') }}" rel="stylesheet">
+<link href="{{ asset('niceadmin/vendor/select2/css/select2-bootstrap-5-theme.min.css') }}" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="{{ asset('niceadmin/css/style.css') }}" rel="stylesheet">
-
+  <!-- Template Main .CSS') }} File -->
+<link href="{{ asset('niceadmin/css/style.css') }}" rel="stylesheet">
+  
   <style>
     label.required::after {
       content: " *";
@@ -89,7 +89,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{ route('dashboard.index') }}" class="logo d-flex align-items-center">
         <img src="{{ asset('niceadmin/img/logo.png') }}" alt="">
         <span class="d-none d-lg-block">NiceAdmin</span>
       </a>
@@ -102,7 +102,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="{{ asset('niceadmin/img/profile-img.jpg') }}') }}') }}" alt="Profile" class="rounded-circle">
+          <img src="{{ asset('niceadmin/img/profile-img.jpg') }}" alt="Profile">
             <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -158,13 +158,19 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" href="{{ route('dashboard.index') }}">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
       </li>
-
       <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ route('user.index') }}">
+        <i class='bx bx-user-pin'></i>
+          <span>User</span>
+        </a>
+      </li>
+
+      {{-- <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Components</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
@@ -180,7 +186,7 @@
             </a>
           </li>
         </ul>
-      </li>
+      </li> --}}
 
     </ul>
 
@@ -189,7 +195,7 @@
   <main id="main" class="main flex-grow-1">
 
     <div class="card shadow p-3">
-      <h5 class="fw-bold mb-0">Blank Page</h5>
+      <h5 class="fw-bold mb-0">{{ $title }}</h5>
     </div>
 
   </main><!-- End #main -->
@@ -211,19 +217,19 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
+  @stack('modals')
 
   <!-- add on -->
   <script src="{{ asset('niceadmin/vendor/jquery/jquery-3.7.1.min.js') }}"></script>
-  <script src="{{ asset('niceadmin/vendor/parsley/parsley.min.js') }}"></script>
-  <script src="{{ asset('niceadmin/vendor/sweetalert2/sweetalert2@11"></script>
-  <script src="{{ asset('niceadmin/vendor/dataTables/js/dataTables.js') }}"></script>
-  <script src="{{ asset('niceadmin/vendor/dataTables/js/dataTables.bootstrap5.js') }}"></script>
-
+<script src="{{ asset('niceadmin/vendor/parsley/parsley.min.js') }}"></script>
+<script src="{{ asset('niceadmin/vendor/sweetalert2/sweetalert2.all.min.js') }}"></script>
+<script src="{{ asset('niceadmin/vendor/dataTables/js/dataTables.js') }}"></script>
+<script src="{{ asset('niceadmin/vendor/dataTables/js/dataTables.bootstrap5.js') }}"></>
   <!-- Vendor JS Files -->
   <script src="{{ asset('niceadmin/vendor/apexcharts/apexcharts.min.js') }}"></script>
-  <script src="{{ asset('niceadmin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-  <script src="{{ asset('niceadmin/vendor/tinymce/tinymce.min.js') }}"></script>
-  <script src="{{ asset('niceadmin/vendor/select2/js/select2.min.js') }}"></script>
+<script src="{{ asset('niceadmin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('niceadmin/vendor/tinymce/tinymce.min.js') }}"></script>
+<script src="{{ asset('niceadmin/vendor/select2/js/select2.min.js') }}"></script>
 
   <!-- Template Main JS File -->
   <script src="{{ asset('niceadmin/js/main.js') }}"></script>
@@ -257,7 +263,4 @@
   </script>
 
 </body>
-
-</html>div>
-    <!-- Walk as if you are kissing the Earth with your feet. - Thich Nhat Hanh -->
-</div>
+</html>
