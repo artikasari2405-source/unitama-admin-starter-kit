@@ -194,11 +194,9 @@
 
   <main id="main" class="main flex-grow-1">
 
-    <div class="card shadow p-3">
-      <h5 class="fw-bold mb-0">{{ $title }}</h5>
-    </div>
+    {{ $slot }}
 
-  </main><!-- End #main -->
+</main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
@@ -224,8 +222,7 @@
 <script src="{{ asset('niceadmin/vendor/parsley/parsley.min.js') }}"></script>
 <script src="{{ asset('niceadmin/vendor/sweetalert2/sweetalert2.all.min.js') }}"></script>
 <script src="{{ asset('niceadmin/vendor/dataTables/js/dataTables.js') }}"></script>
-<script src="{{ asset('niceadmin/vendor/dataTables/js/dataTables.bootstrap5.js') }}"></>
-  <!-- Vendor JS Files -->
+<script src="{{ asset('niceadmin/vendor/dataTables/js/dataTables.bootstrap5.js') }}"></script>  <!-- Vendor JS Files -->
   <script src="{{ asset('niceadmin/vendor/apexcharts/apexcharts.min.js') }}"></script>
 <script src="{{ asset('niceadmin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('niceadmin/vendor/tinymce/tinymce.min.js') }}"></script>
@@ -235,10 +232,8 @@
   <script src="{{ asset('niceadmin/js/main.js') }}"></script>
 
   <script>
-    new DataTable('#data-table', {
-        pageLength: 5,
-        lengthMenu: [5, 10, 25, 50, 100]
-    });
+    new DataTable('#data-table');
+    
 
     $('.form').parsley({
       errorClass: 'is-invalid text-red',
