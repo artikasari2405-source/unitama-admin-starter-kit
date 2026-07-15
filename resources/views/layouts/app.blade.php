@@ -255,7 +255,30 @@
       theme: 'bootstrap-5',
       width: "100%",
     })
+
+    
+    let flashSuccess = "{{ session('success') ?? '' }}"
+    if (flashSuccess) {
+            Swal.fire({
+                title: "SELESAI!",
+                text: flashSuccess,
+                icon: "success",
+                timer: 1500,
+                showConfirmButton: false,
+            });
+        }
+
+        let flashError = "{{ session('error') ?? '' }}"
+        if (flashError) {
+            Swal.fire({
+                icon: "error",
+                title: "Astaga...",
+                text: flashError,
+            });
+        } 
+  
   </script>
+  @stack('scripts')
 
 </body>
 </html>
