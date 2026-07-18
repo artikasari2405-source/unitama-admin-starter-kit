@@ -3,11 +3,9 @@
     <div class="card shadow p-3">
         <h5 class="fw-bold mb-0">{{ $title }}</h5>
     </div>
-    <div class="card shadow p-3">
-        <form method="POST" action="{{ route('user.update', $user) }}" class="form" enctype="multipart/form-data">
-            @csrf
-            @method('put')
-
+    <form action="{{ route('user.update', $user->id) }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    @method('PUT')
             <div class="row g-3 mb-2">
                 <div class="col-md-6">
                     <label for="name" class="form-label required">Nama</label>
@@ -43,17 +41,7 @@
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
-                <div class="col-md-6">
-                    <label for="role" class="form-label required">Role</label>
-                    <select class="form-select select2-default" name="role" required>
-                        <option value="">Pilih Role</option>
-                        <option value="Super Admin" @selected(old('role', $user->role) == 'Super Admin')>Super Admin</option>
-                        <option value="Admin" @selected(old('role',  $user->role) == 'Admin')>Admin</option>
-                    </select>
-                    @error('role')
-                        <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
+                
 
                 <div class="col-md-6">
                     <label for="avatar" class="form-label">Avatar (MaxSize 1Mb)</label>
@@ -68,8 +56,8 @@
                 
                 </div>
             </div>
-                <div class="text-end">
-                <a class="btn btn-warning" href="{{ route('user.index') }}" role="button">Cancel</a>
+                <div class="text-start">
+                <a class="btn btn-warning" href="{{ route('dashboard.index') }}" role="button">Cancel</a>
                 <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
